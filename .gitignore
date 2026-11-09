@@ -1,0 +1,33 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+.astro/
+
+# logs
+*.log
+npm-debug.log*
+
+# env
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+*.swp
+
+# IDE (keep .idea project config if desired; ignore its volatile files)
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/shelf/
+.idea/
+
+
+# Vercel / misc
+.vercel
+
+.artifacts/
+
+
