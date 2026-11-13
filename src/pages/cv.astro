@@ -1,0 +1,113 @@
+---
+import '../styles/portfolio.css';
+
+const experience = [
+  { role: 'Lead Mobile Developer', company: 'PT Abhimantra Sistem Solusindo', period: 'May 2026 – Present · Jakarta, full-time', detail: 'Led the mobile development team, established best practices, and mentored team members while aligning technical strategy with business goals.' },
+  { role: 'Mobile Developer', company: 'PT Abhimantra Sistem Solusindo', period: 'Oct 2024 – May 2026', detail: 'Built and maintained Android and iOS applications with Flutter and Compose Multiplatform, collaborating across mobile and backend teams.' },
+  { role: 'Android Developer', company: 'Little Brain Boosters', period: 'Aug 2023 – Sep 2024 · Part-time, remote', detail: 'Developed Android apps with Kotlin and Firebase; contributed to app performance, Play Console releases, testing, and subscriptions.' },
+  { role: 'Mobile Developer Intern', company: 'Citiasia Inc.', period: 'Feb 2023 – Jul 2023 · Jakarta', detail: 'Built Flutter applications for Android and iOS and worked with designers and Scrum teams.' },
+];
+
+const projects = [
+  { name: 'Slamet', type: 'Mobile app · Flutter', href: 'https://play.google.com/store/apps/details?id=id.pammineral.slamet&pcampaignid=web_share' },
+  { name: 'Semar', type: 'Mobile app · Flutter', href: 'https://play.google.com/store/apps/details?id=com.indokordsa.app&pcampaignid=web_share' },
+  { name: 'Beu', type: 'Recipe platform · Compose Multiplatform', href: 'https://cookwithbeu.web.id' },
+  { name: 'Dopalearn', type: 'Learning app · Android', href: 'https://play.google.com/store/apps/details?id=com.littlebrainboosters.dopalearn' },
+  { name: 'Firetor', type: 'Open-source library · Library', href: 'https://github.com/kylixeza/firetor' },
+  { name: 'SoulMath', type: 'Learning app · Android', href: 'https://play.google.com/store/apps/details?id=com.ramiyon.soulmath_v3&hl=id' },
+  { name: 'PondPedia', type: 'Mobile app · Android', href: 'https://play.google.com/store/apps/details?id=com.pondpedia.android.pondpedia' },
+  { name: 'SurveyAsia', type: 'Mobile app · Flutter', href: 'https://play.google.com/store/apps/details?id=com.citiasia.survei_asia' },
+  { name: 'Nembayu', type: 'Mobile app · Flutter', href: 'https://apps.apple.com/id/app/nembayu/id6444177178' },
+];
+
+const awards = [
+  '1st Winner, INTENTION (App & Web Dev), IFEST, University of Padjadjaran (2021)',
+  '1st Winner, App Innovation HOLOGY 5.0, University of Brawijaya (2022)',
+  '9th Place, Varsity Hackathon, Universiti Sains Malaysia (2022)',
+  '3rd Place, 8th Closer Hackathon, Telkom University (2022)',
+  'Best Graduate, FILKOM UB Yudisium Period XI 2023/2024 (2024)',
+  'Best Graduate, University of Brawijaya Graduation Period XII 2024/2025 (2024)',
+];
+
+const credentials = [
+  { title: 'Associate Android Developer', issuer: 'Google Developers · 2022' },
+  { title: 'SoulMath patent', issuer: 'Ministry of Law and Human Rights, Indonesia · 2023' },
+  { title: 'Mobile Application for Cuisine Recipe Guide Using Image Classification', issuer: 'J-PTIIK · Journal publication · 2024' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV · Kylix Eza Saputra</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500&display=swap" rel="stylesheet" />
+  </head>
+  <body class="cv-page">
+    <header class="cv-toolbar no-print">
+      <a class="link" href="/">Back to portfolio</a>
+      <button type="button" class="button" id="print-cv">Save or print PDF</button>
+    </header>
+
+    <main class="cv-sheet" id="main">
+      <section class="cv-head" aria-labelledby="cv-name">
+        <h1 id="cv-name">Kylix Eza Saputra</h1>
+        <p class="lead">Lead Mobile Developer building Android, Flutter, and Compose Multiplatform applications.</p>
+        <p class="small muted">
+          <a href="mailto:kylixeza.dev@gmail.com">kylixeza.dev@gmail.com</a> ·
+          <a href="https://github.com/kylixeza" target="_blank" rel="noreferrer">github.com/kylixeza</a> ·
+          <a href="https://www.linkedin.com/in/kylixezasaputra/" target="_blank" rel="noreferrer">linkedin.com/in/kylixezasaputra</a> ·
+          <a href="https://kylixeza.my.id">kylixeza.my.id</a>
+        </p>
+      </section>
+
+      <section class="cv-block" aria-labelledby="cv-exp">
+        <h2 id="cv-exp">Experience</h2>
+        <div class="cv-list">
+          {experience.map((job) => (
+            <article class="cv-item">
+              <div class="cv-item-top">
+                <h3>{job.role}, {job.company}</h3>
+                <span class="small muted nums">{job.period}</span>
+              </div>
+              <p>{job.detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="cv-block" aria-labelledby="cv-edu">
+        <h2 id="cv-edu">Education & Skills</h2>
+        <p><strong>Bachelor of Informatics Engineering</strong>, University of Brawijaya (2024) · GPA 3.96 / 4.00</p>
+        <p class="muted">Android, Kotlin, Compose Multiplatform, Flutter, Firebase, Mobile Architecture</p>
+      </section>
+
+      <section class="cv-block" aria-labelledby="cv-work">
+        <h2 id="cv-work">Selected Shipped Work</h2>
+        <ul class="cv-grid-list">
+          {projects.map((p) => (
+            <li><strong>{p.name}</strong> <span class="muted">({p.type})</span></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="cv-block" aria-labelledby="cv-awards">
+        <h2 id="cv-awards">Recognition & Credentials</h2>
+        <ul class="cv-plain-list">
+          {awards.map((a) => <li>{a}</li>)}
+          {credentials.map((c) => <li>{c.title}, {c.issuer}</li>)}
+        </ul>
+      </section>
+    </main>
+
+    <script>
+      document.getElementById('print-cv')?.addEventListener('click', () => window.print());
+      if (new URLSearchParams(window.location.search).get('print') === '1') {
+        window.addEventListener('load', () => setTimeout(() => window.print(), 250));
+      }
+    </script>
+  </body>
+</html>

@@ -1,26 +1,27 @@
 ---
 import '../styles/portfolio.css';
 
-// Image URLs depend on the original site's hosting and its images remaining available.
 const imageBase = '/images/';
-const projectImages = ['soulmath.webp', 'beu.webp', 'dopalearn.webp', 'pondpedia.webp', 'surveyasia.webp', 'firetor.webp', 'nembayu.webp', 'slamet.webp', 'semar.webp'];
+
 const projects = [
-  { name: 'SoulMath', type: 'Learning app', href: 'https://play.google.com/store/apps/details?id=com.ramiyon.soulmath_v3&hl=id' },
-  { name: 'Beu', type: 'Recipe platform', href: 'https://cookwithbeu.web.id' },
-  { name: 'Dopalearn', type: 'Learning app', href: 'https://play.google.com/store/apps/details?id=com.littlebrainboosters.dopalearn', appStore: 'https://apps.apple.com/id/app/dopalearn/id1542507323' },
-  { name: 'PondPedia', type: 'Mobile app', href: 'https://play.google.com/store/apps/details?id=com.pondpedia.android.pondpedia' },
-  { name: 'SurveyAsia', type: 'Mobile app', href: 'https://play.google.com/store/apps/details?id=com.citiasia.survei_asia' },
-  { name: 'Firetor', type: 'Open-source library', href: 'https://github.com/kylixeza/firetor' },
-  { name: 'Nembayu', type: 'Mobile app', href: 'https://apps.apple.com/id/app/nembayu/id6444177178' },
-  { name: 'Slamet', type: 'Mobile app', href: 'https://play.google.com/store/apps/details?id=id.pammineral.slamet&pcampaignid=web_share', appStore: 'https://apps.apple.com/id/app/slamet/id6670607085' },
-  { name: 'Semar', type: 'Mobile app', href: 'https://play.google.com/store/apps/details?id=com.indokordsa.app&pcampaignid=web_share', appStore: 'https://apps.apple.com/id/app/semar/id6446005830' },
+  { name: 'Slamet', type: 'Mobile app', platform: 'Flutter', year: '2025', image: 'slamet.webp', href: 'https://play.google.com/store/apps/details?id=id.pammineral.slamet&pcampaignid=web_share', appStore: 'https://apps.apple.com/id/app/slamet/id6670607085', note: 'Enterprise mobile client delivered for Android and iOS.' },
+  { name: 'Semar', type: 'Mobile app', platform: 'Flutter', year: '2025', image: 'semar.webp', href: 'https://play.google.com/store/apps/details?id=com.indokordsa.app&pcampaignid=web_share', appStore: 'https://apps.apple.com/id/app/semar/id6446005830', note: 'Industrial operations app available across Google Play and App Store.' },
+  { name: 'Beu', type: 'Recipe platform', platform: 'Compose Multiplatform', year: '2024', image: 'beu.webp', href: 'https://cookwithbeu.web.id', note: 'Cuisine recipe guide powered by image classification research.' },
+  { name: 'Dopalearn', type: 'Learning app', platform: 'Android', year: '2024', image: 'dopalearn.webp', href: 'https://play.google.com/store/apps/details?id=com.littlebrainboosters.dopalearn', appStore: 'https://apps.apple.com/id/app/dopalearn/id1542507323', note: 'Cross-platform learning companion shipped to Google Play and App Store.' },
+  { name: 'Firetor', type: 'Open-source library', platform: 'Library', year: '2024', image: 'firetor.webp', href: 'https://github.com/kylixeza/firetor', note: 'Open-source Kotlin library for Firebase Firestore workflows.' },
+  { name: 'SoulMath', type: 'Learning app', platform: 'Android', year: '2023', image: 'soulmath.webp', href: 'https://play.google.com/store/apps/details?id=com.ramiyon.soulmath_v3&hl=id', note: 'Interactive math learning application with patented mobile workflow.' },
+  { name: 'PondPedia', type: 'Mobile app', platform: 'Android', year: '2023', image: 'pondpedia.webp', href: 'https://play.google.com/store/apps/details?id=com.pondpedia.android.pondpedia', note: 'Native Android client built for aquaculture operations.' },
+  { name: 'SurveyAsia', type: 'Mobile app', platform: 'Flutter', year: '2023', image: 'surveyasia.webp', href: 'https://play.google.com/store/apps/details?id=com.citiasia.survei_asia', note: 'Flutter survey application built for Android and iOS respondents.' },
+  { name: 'Nembayu', type: 'Mobile app', platform: 'Flutter', year: '2023', image: 'nembayu.webp', href: 'https://apps.apple.com/id/app/nembayu/id6444177178', note: 'Consumer mobile application published on the App Store.' },
 ];
+
 const experience = [
   { role: 'Lead Mobile Developer', company: 'PT Abhimantra Sistem Solusindo', period: 'May 2026 – Present · Jakarta, full-time', detail: 'Led the mobile development team, established best practices, and mentored team members while aligning technical strategy with business goals.' },
   { role: 'Mobile Developer', company: 'PT Abhimantra Sistem Solusindo', period: 'Oct 2024 – May 2026', detail: 'Built and maintained Android and iOS applications with Flutter and Compose Multiplatform, collaborating across mobile and backend teams.' },
   { role: 'Android Developer', company: 'Little Brain Boosters', period: 'Aug 2023 – Sep 2024 · Part-time, remote', detail: 'Developed Android apps with Kotlin and Firebase; contributed to app performance, Play Console releases, testing, and subscriptions.' },
   { role: 'Mobile Developer Intern', company: 'Citiasia Inc.', period: 'Feb 2023 – Jul 2023 · Jakarta', detail: 'Built Flutter applications for Android and iOS and worked with designers and Scrum teams.' },
 ];
+
 const awards = [
   '1st Winner, INTENTION (App & Web Dev), IFEST, University of Padjadjaran (2021)',
   '1st Winner, App Innovation HOLOGY 5.0, University of Brawijaya (2022)',
@@ -29,119 +30,482 @@ const awards = [
   'Best Graduate, FILKOM UB Yudisium Period XI 2023/2024 (2024)',
   'Best Graduate, University of Brawijaya Graduation Period XII 2024/2025 (2024)',
 ];
+
 const credentials = [
   { title: 'Associate Android Developer', issuer: 'Google Developers · 2022', href: 'https://www.credential.net/cc14d1ac-f6fb-46d5-8c17-9850b1d304bc' },
   { title: 'SoulMath patent', issuer: 'Ministry of Law and Human Rights, Indonesia · 2023', href: 'https://drive.google.com/file/d/1dPQjRZfaZ3zstNcghVf96l50oKQu8crz/view?usp=sharing' },
   { title: 'Mobile Application for Cuisine Recipe Guide Using Image Classification', issuer: 'J-PTIIK · Journal publication · 2024', href: 'https://j-ptiik.ub.ac.id/index.php/j-ptiik/article/view/13913' },
 ];
+
 const social = [
   { label: 'GitHub', href: 'https://github.com/kylixeza' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kylixezasaputra/' },
   { label: 'Email', href: 'mailto:kylixeza.dev@gmail.com' },
+];
+
+const platforms = ['All', 'Android', 'Flutter', 'Compose Multiplatform', 'Library'];
+
+const stageImages = [
+  { id: 'hero', src: `${imageBase}about.png`, alt: 'Kylix Eza Saputra portrait', caption: 'Kylix Eza Saputra · Lead Mobile Developer' },
+  { id: 'work', src: `${imageBase}soulmath.webp`, alt: 'SoulMath mobile learning application artwork', caption: 'Selected shipped work · SoulMath' },
+  { id: 'experience', src: `${imageBase}dopalearn.webp`, alt: 'Dopalearn cross-platform mobile application artwork', caption: 'Cross-platform shipping · Dopalearn' },
+  { id: 'about', src: `${imageBase}beu.webp`, alt: 'Beu recipe classification application artwork', caption: 'Research to product · Beu' },
 ];
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="theme-color" content="#f4f1eb" />
-    <meta name="description" content="Kylix Eza Saputra | mobile developer building thoughtful Android and cross-platform experiences." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ebe5e3" />
+    <meta name="description" content="Kylix Eza Saputra | Lead Mobile Developer building Android, Flutter, and Compose Multiplatform experiences." />
     <meta property="og:title" content="Kylix Eza Saputra | Mobile Developer" />
-    <meta property="og:description" content="Selected work, experience, and writing by Kylix Eza Saputra." />
+    <meta property="og:description" content="Selected work, experience, and CV by Kylix Eza Saputra." />
     <meta property="og:url" content="https://kylixeza.my.id/" />
     <meta property="og:type" content="website" />
     <link rel="canonical" href="https://kylixeza.my.id/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/webp" href="/images/favicon.webp" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500&display=swap" rel="stylesheet" />
     <title>Kylix Eza Saputra | Mobile Developer</title>
-    <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Person', name: 'Kylix Eza Saputra', url: 'https://kylixeza.my.id/', jobTitle: 'Mobile Developer', sameAs: social.map((item) => item.href).filter((href) => href.startsWith('https://')) })} />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Person', name: 'Kylix Eza Saputra', url: 'https://kylixeza.my.id/', jobTitle: 'Lead Mobile Developer', sameAs: social.map((item) => item.href).filter((href) => href.startsWith('https://')) })} />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <a class="wordmark" href="#top" aria-label="Kylix, home">K<span>.</span></a>
+
+    <header class="site-header wrap">
+      <a class="wordmark" href="#top" aria-label="Kylix Eza Saputra, home">Kylix</a>
       <nav aria-label="Main navigation">
-        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a>
+        <a class="link" href="#work">Work</a>
+        <a class="link" href="#experience">Experience</a>
+        <a class="link" href="#about">About</a>
+        <a class="link" href="#contact">Contact</a>
       </nav>
-      <a class="header-contact" href="mailto:kylixeza.dev@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
+      <a class="button header-cv" href="/cv" download="Kylix-Eza-Saputra-CV.html">Download CV</a>
     </header>
+
     <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <p class="eyebrow">Kylix Eza Saputra / Mobile developer</p>
-        <h1 id="hero-title">Ideas into apps.<br /><em>That’s my work.</em></h1>
-        <p class="hero-specialty">Android. Flutter.<br />Compose Multiplatform.</p>
-        <div class="hero-foot">
-          <p>Hey, I’m Kylix. I build for Android and iOS, from native applications to shared codebases. Currently Lead Mobile Developer at PT Abhimantra Sistem Solusindo.</p>
-          <a class="text-link" href="#work">See selected work <span aria-hidden="true">↓</span></a>
+      <div class="split-shell wrap" id="top">
+        <aside class="stage-column" aria-label="Visual preview stage">
+          <div class="stage-frame" data-open>
+            {stageImages.map((item, index) => (
+              <img
+                src={item.src}
+                alt={item.alt}
+                width="960"
+                height="1200"
+                class:list={['stage-img', { 'is-active': index === 0, 'is-banner': item.id !== 'hero' }]}
+                data-stage-id={item.id}
+                fetchpriority={index === 0 ? 'high' : undefined}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            ))}
+            <img
+              src={`${imageBase}soulmath.webp`}
+              alt=""
+              width="1200"
+              height="750"
+              class="stage-img stage-hover-img is-banner"
+              id="stage-hover-img"
+              aria-hidden="true"
+            />
+          </div>
+        </aside>
+
+        <div class="reading-column">
+          <section class="hero-block" aria-labelledby="hero-title" data-chapter="hero">
+            <h1 class="display lines" id="hero-title">
+              <span class="line"><span data-line style="--i:0">Kylix Eza Saputra</span></span>
+              <span class="line"><span data-line style="--i:1">Mobile developer</span></span>
+            </h1>
+            <p class="lead" data-load style="--d:320ms">
+              Lead Mobile Developer building Android, Flutter, and Compose Multiplatform applications from Jakarta.
+            </p>
+            <div class="hero-actions" data-load style="--d:440ms">
+              <a class="button" href="/cv?print=1">Download CV</a>
+              <a class="link" href="#work">Selected work</a>
+            </div>
+          </section>
+
+          <section class="section-block work-block" id="work" aria-labelledby="work-title" data-chapter="work">
+            <div class="section-head" data-reveal>
+              <h2 class="head" id="work-title">Selected work</h2>
+              <p class="muted">Hover or select a platform to inspect shipped apps on the stage.</p>
+            </div>
+
+            <div class="filter-bar" role="group" aria-label="Filter projects by platform" data-reveal>
+              {platforms.map((platform) => (
+                <button
+                  type="button"
+                  class:list={['filter-btn', { 'is-active': platform === 'All' }]}
+                  data-filter={platform}
+                  aria-pressed={platform === 'All' ? 'true' : 'false'}
+                >
+                  {platform}
+                </button>
+              ))}
+            </div>
+
+            <ul class="ledger-list" id="project-ledger">
+              {projects.map((project, index) => (
+                <li
+                  class="ledger-item"
+                  data-platform={project.platform}
+                  data-preview={`${imageBase}${project.image}`}
+                  data-caption={`${project.name} · ${project.type}`}
+                  data-reveal
+                  style={`--stagger: ${index}`}
+                >
+                  <div class="ledger-row">
+                    {index < 3 && (
+                      <div class="ledger-mobile-thumb">
+                        <img
+                          src={`${imageBase}${project.image}`}
+                          alt={`${project.name} preview`}
+                          width="960"
+                          height="600"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                    )}
+                    <div class="ledger-main">
+                      <a
+                        class="ledger-title link"
+                        href={project.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        data-preview-trigger
+                      >
+                        {project.name}
+                      </a>
+                      <span class="ledger-type muted">{project.type}</span>
+                      <span class="ledger-year nums">{project.year}</span>
+                    </div>
+                    <div class="ledger-links small">
+                      <a
+                        class="link"
+                        href={project.href}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {project.href.includes('play.google.com')
+                          ? 'Google Play'
+                          : project.href.includes('apps.apple.com')
+                            ? 'App Store'
+                            : project.name === 'Firetor'
+                              ? 'GitHub'
+                              : 'Website'}
+                      </a>
+                      {project.appStore && (
+                        <a class="link" href={project.appStore} target="_blank" rel="noreferrer">
+                          App Store
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <p class="small muted empty-state" id="ledger-empty" hidden>
+              No shipped projects match that platform filter.
+            </p>
+          </section>
+
+          <section class="section-block experience-block" id="experience" aria-labelledby="experience-title" data-chapter="experience">
+            <div class="section-head" data-reveal>
+              <h2 class="head" id="experience-title">Experience</h2>
+            </div>
+
+            <div class="timeline-list">
+              {experience.map((job, idx) => (
+                <article class:list={['timeline-item', { 'is-current': idx === 0 }]} data-reveal>
+                  <p class="small muted nums timeline-period">{job.period}</p>
+                  <div class="timeline-body">
+                    <h3 class="timeline-role">{job.role}</h3>
+                    <p class="timeline-company">{job.company}</p>
+                    <p class="timeline-detail">{job.detail}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section class="section-block about-block" id="about" aria-labelledby="about-title" data-chapter="about">
+            <div class="letter-card" data-reveal>
+              <div class="letter-author">
+                <img
+                  src={`${imageBase}about.png`}
+                  alt="Kylix Eza Saputra"
+                  width="88"
+                  height="88"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div>
+                  <h2 class="head" id="about-title">About</h2>
+                  <p class="small muted">University of Brawijaya · Informatics Engineering (GPA 3.96 / 4.00)</p>
+                </div>
+              </div>
+
+              <div class="letter-copy">
+                <p>
+                  I am a mobile developer who enjoys bringing an idea from a rough sketch to something people can hold and use every day.
+                </p>
+                <p>
+                  My work spans native Android with Kotlin, Compose Multiplatform, and Flutter, alongside Firebase and mobile architecture for production teams.
+                </p>
+                <p>
+                  I graduated in 2024 from the University of Brawijaya with a Bachelor of Informatics Engineering (3.96 / 4.00 GPA), and I continue to mentor teams and contribute to developer communities.
+                </p>
+              </div>
+
+              <div class="stack-row" aria-label="Core technologies">
+                <span>Android</span>
+                <span>Kotlin</span>
+                <span>Compose Multiplatform</span>
+                <span>Flutter</span>
+                <span>Firebase</span>
+                <span>Mobile architecture</span>
+              </div>
+
+              <div class="letter-signoff">
+                <p class="signoff-name">Kylix Eza Saputra</p>
+                <p class="small muted">Lead Mobile Developer</p>
+              </div>
+            </div>
+          </section>
         </div>
-        <div class="hero-index" aria-hidden="true">KYLIX / SELECTED WORK / 2026</div>
-      </section>
+      </div>
 
-      <section class="section work-section" id="work" aria-labelledby="work-title">
-        <div class="section-heading"><p class="eyebrow">01 / Selected work</p><h2 id="work-title">Made to be <em>used.</em></h2></div>
-        <div class="project-grid">
-          {projects.map((project, index) => (
-            <article class:list={['project-card', { 'project-featured': index < 3, 'project-compact': index >= 3 }]} data-motion={index < 3 ? 'project' : undefined}>
-              <span class="project-number" aria-hidden="true">0{index + 1}</span>
-              <div class="project-image"><img src={`${imageBase}${projectImages[index]}`} alt={`${project.name} project artwork`} width="960" height="720" loading="lazy" decoding="async" /></div>
-              <div class="project-meta"><div><h3>{project.name}</h3><p>{project.type}</p><div class="project-links"><a href={project.href} target="_blank" rel="noreferrer" aria-label={`${project.name}: ${project.href.includes('play.google.com') ? 'Google Play' : project.href.includes('apps.apple.com') ? 'App Store' : project.name === 'Firetor' ? 'GitHub' : 'Website'} (opens in new tab)`}>{project.href.includes('play.google.com') ? 'Google Play' : project.href.includes('apps.apple.com') ? 'App Store' : project.name === 'Firetor' ? 'GitHub' : 'Website'} ↗</a>{project.appStore && <a href={project.appStore} target="_blank" rel="noreferrer" aria-label={`${project.name}: App Store (opens in new tab)`}>App Store ↗</a>}</div></div></div>
-            </article>
-          ))}
+      <section class="full-band proof-band wrap" id="recognition" aria-labelledby="proof-title">
+        <div class="proof-layout">
+          <div class="proof-heading" data-reveal>
+            <h2 class="head" id="proof-title">Recognition</h2>
+          </div>
+
+          <div class="proof-columns" data-reveal>
+            <div class="proof-col">
+              <p class="proof-kind muted">Competitions and honours</p>
+              <ul>
+                {awards.map((award) => <li>{award}</li>)}
+              </ul>
+            </div>
+            <div class="proof-col">
+              <p class="proof-kind muted">Credentials and publication</p>
+              <ul>
+                {credentials.map((item) => (
+                  <li>
+                    <a class="link" href={item.href} target="_blank" rel="noreferrer">{item.title}</a>
+                    <span class="small muted proof-meta">{item.issuer}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="section experience-section" id="experience" aria-labelledby="experience-title">
-        <div class="section-heading" data-motion="heading"><p class="eyebrow">02 / Where I’ve worked</p><h2 id="experience-title">Experience, <em>in practice.</em></h2></div>
-        <div class="experience-list">
-          {experience.map((job) => <article class="experience-item" data-motion="career"><div class="experience-period">{job.period}</div><div><h3>{job.role}</h3><p class="company">{job.company}</p><p>{job.detail}</p></div></article>)}
+      <section class="full-band contact-band wrap" id="contact" aria-labelledby="contact-title">
+        <div class="contact-layout" data-reveal>
+          <div class="contact-intro">
+            <h2 class="head" id="contact-title">Start a conversation</h2>
+            <p class="contact-sub">Send a short note about a mobile role, product build, or collaboration.</p>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate>
+            <label class="sr-only" for="contact-message">Your message</label>
+            <div class="contact-field-wrap">
+              <input
+                class="contact-input"
+                id="contact-message"
+                name="message"
+                type="text"
+                placeholder="Write a brief message or project note…"
+                required
+              />
+              <button class="contact-submit" type="submit" aria-label="Open email draft with your message">Send</button>
+            </div>
+            <p class="small muted" id="contact-feedback" aria-live="polite">
+              Opens your email app addressed to kylixeza.dev@gmail.com.
+            </p>
+            <div class="contact-direct">
+              <a class="link" href="mailto:kylixeza.dev@gmail.com">kylixeza.dev@gmail.com</a>
+              <a class="link" href="/cv?print=1">Download printable CV</a>
+            </div>
+          </form>
         </div>
-      </section>
-
-      <section class="section about-section" id="about" aria-labelledby="about-title">
-        <div class="section-heading"><p class="eyebrow">03 / A little about me</p><h2 id="about-title">Curious by <em>default.</em></h2></div>
-        <div class="about-layout"><figure class="about-portrait" data-motion="portrait"><img class="about-photo" src={`${imageBase}about.png`} alt="Kylix Eza Saputra" width="640" height="800" loading="lazy" decoding="async" /><figcaption>Kylix Eza Saputra<br /><span>Mobile developer</span></figcaption></figure><div class="about-copy"><p>I’m a mobile developer who enjoys bringing an idea from a rough sketch to something people can use. My work spans native Android, Flutter, and Compose Multiplatform.</p><p>I earned a Bachelor’s degree in Informatics Engineering from the University of Brawijaya in 2024, graduating with a 3.96 / 4.00 GPA. I’ve also contributed to developer communities and student projects.</p><div class="skill-list" aria-label="Areas of work"><span>Android</span><span>Kotlin</span><span>Compose Multiplatform</span><span>Flutter</span><span>Firebase</span><span>Mobile architecture</span></div></div></div>
-      </section>
-
-      <section class="section recognition-section" aria-labelledby="recognition-title">
-        <div class="section-heading"><p class="eyebrow">04 / Recognition</p><h2 id="recognition-title">A few <em>milestones.</em></h2></div>
-        <ul class="recognition-list">{awards.map((award) => <li>{award}</li>)}</ul>
-        <div class="credentials"><h3>Credentials & publication</h3>{credentials.map((item) => <a href={item.href} target="_blank" rel="noreferrer"><span>{item.title}<small>{item.issuer}</small></span><span aria-hidden="true">↗</span></a>)}</div>
-      </section>
-
-      <section class="contact-section" id="contact" aria-labelledby="contact-title" data-motion="contact">
-        <p class="eyebrow">Have a good one in mind?</p><h2 id="contact-title">Let’s make it<br /><em>matter.</em></h2>
-        <a class="contact-link" href="mailto:kylixeza.dev@gmail.com">kylixeza.dev@gmail.com <span aria-hidden="true">↗</span></a>
       </section>
     </main>
-    <footer class="site-footer"><span>© {new Date().getFullYear()} Kylix Eza Saputra</span><div>{social.map((item) => <a href={item.href} target={item.href.startsWith('https://') ? '_blank' : undefined} rel={item.href.startsWith('https://') ? 'noreferrer' : undefined}>{item.label}</a>)}</div><a href="#top">Back to top ↑</a></footer>
-    <script>
-      // Motion is additive: content never waits for JavaScript to become visible.
-      const motionPreference = window.matchMedia('(prefers-reduced-motion: no-preference)');
-      if ('IntersectionObserver' in window && motionPreference.matches) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              if (motionPreference.matches && !entry.target.contains(document.activeElement)) {
-                entry.target.classList.add('motion-enter');
-              }
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.12 });
 
-        document.querySelectorAll('[data-motion]').forEach((element) => {
-          observer.observe(element);
-          element.addEventListener('focusin', () => {
-            element.classList.remove('motion-enter');
-            observer.unobserve(element);
-          }, { once: true });
-        });
-        motionPreference.addEventListener('change', () => {
-          if (!motionPreference.matches) {
-            observer.disconnect();
-            document.querySelectorAll('.motion-enter').forEach((element) => element.classList.remove('motion-enter'));
+    <footer class="site-footer wrap">
+      <img
+        class="footer-bg"
+        src="https://picsum.photos/id/172/1600/1000?grayscale"
+        alt="Calm misty stone jetty stretching into still water"
+        width="1600"
+        height="1000"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="footer-overlay" aria-hidden="true"></div>
+
+      <div class="footer-top">
+        <nav class="footer-links" aria-label="Social links">
+          {social.map((item) => (
+            <a
+              class="link"
+              href={item.href}
+              target={item.href.startsWith('https://') ? '_blank' : undefined}
+              rel={item.href.startsWith('https://') ? 'noreferrer' : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <div class="footer-contact">
+          <a class="link" href="mailto:kylixeza.dev@gmail.com">kylixeza.dev@gmail.com</a>
+          <a class="link" href="/cv">Resume / CV</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-wordmark" aria-hidden="true">Kylix Eza Saputra</p>
+        <div class="footer-legal small">
+          <span>© {new Date().getFullYear()} Kylix Eza Saputra</span>
+          <span>Atmospheric backdrop: Aleksi Tappura via Picsum (Unsplash licence)</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // 1. Section reveal observer
+        const revealEls = document.querySelectorAll('[data-reveal]');
+        if ('IntersectionObserver' in window && !reduced) {
+          const revealObserver = new IntersectionObserver(
+            (entries) => {
+              for (const entry of entries) {
+                if (!entry.isIntersecting) continue;
+                entry.target.classList.add('is-in');
+                revealObserver.unobserve(entry.target);
+              }
+            },
+            { rootMargin: '0px 0px -10% 0px', threshold: 0.08 }
+          );
+          revealEls.forEach((el) => revealObserver.observe(el));
+          window.addEventListener('load', () => {
+            setTimeout(() => {
+              revealEls.forEach((el) => el.classList.add('is-in'));
+            }, 1800);
+          });
+        } else {
+          revealEls.forEach((el) => el.classList.add('is-in'));
+        }
+
+        // 2. Slow crossfade on sticky stage as chapters scroll into view
+        const stageFrame = document.querySelector('.stage-frame');
+        const stageImgs = [...document.querySelectorAll('.stage-img[data-stage-id]')];
+        const hoverImg = document.getElementById('stage-hover-img');
+        let activeChapter = 'hero';
+
+        const setStage = (id) => {
+          activeChapter = id;
+          stageImgs.forEach((img) => img.classList.toggle('is-active', img.dataset.stageId === id));
+          if (stageFrame && (!hoverImg || !hoverImg.classList.contains('is-visible'))) {
+            stageFrame.classList.toggle('is-landscape', id !== 'hero');
           }
+        };
+
+        if ('IntersectionObserver' in window) {
+          const chapterObserver = new IntersectionObserver(
+            (entries) => {
+              for (const entry of entries) {
+                if (entry.isIntersecting) {
+                  const id = entry.target.getAttribute('data-chapter');
+                  if (id) setStage(id);
+                }
+              }
+            },
+            { rootMargin: '-35% 0px -45% 0px', threshold: 0 }
+          );
+          document.querySelectorAll('[data-chapter]').forEach((sec) => chapterObserver.observe(sec));
+        }
+
+        // 3. Work ledger platform filter + live stage preview
+        const filterBtns = [...document.querySelectorAll('.filter-btn')];
+        const ledgerItems = [...document.querySelectorAll('.ledger-item')];
+        const emptyState = document.getElementById('ledger-empty');
+
+        filterBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter || 'All';
+            filterBtns.forEach((b) => {
+              const active = b === btn;
+              b.classList.toggle('is-active', active);
+              b.setAttribute('aria-pressed', active ? 'true' : 'false');
+            });
+            let visibleCount = 0;
+            ledgerItems.forEach((item) => {
+              const match = filter === 'All' || item.dataset.platform === filter;
+              item.hidden = !match;
+              if (match) visibleCount += 1;
+            });
+            if (emptyState) emptyState.hidden = visibleCount > 0;
+          });
         });
-      }
+
+        const showPreview = (item) => {
+          if (!hoverImg) return;
+          const src = item.dataset.preview;
+          const cap = item.dataset.caption;
+          if (!src) return;
+          hoverImg.src = src;
+          hoverImg.alt = cap || 'Project preview';
+          hoverImg.classList.add('is-visible');
+          stageFrame?.classList.add('is-landscape');
+        };
+
+        const hidePreview = () => {
+          if (!hoverImg) return;
+          hoverImg.classList.remove('is-visible');
+          stageFrame?.classList.toggle('is-landscape', activeChapter !== 'hero');
+        };
+
+        ledgerItems.forEach((item) => {
+          item.addEventListener('pointerenter', () => showPreview(item));
+          item.addEventListener('focusin', () => showPreview(item));
+          item.addEventListener('pointerleave', hidePreview);
+          item.addEventListener('focusout', (e) => {
+            if (!item.contains(e.relatedTarget)) hidePreview();
+          });
+        });
+
+        // 4. Single-field contact form handoff
+        const form = document.getElementById('contact-form');
+        const input = document.getElementById('contact-message');
+        const feedback = document.getElementById('contact-feedback');
+        form?.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const val = (input?.value || '').trim();
+          if (!val) {
+            if (feedback) feedback.textContent = 'Please enter a short note before sending.';
+            input?.focus();
+            return;
+          }
+          const subject = encodeURIComponent('Portfolio inquiry for Kylix Eza Saputra');
+          const body = encodeURIComponent(val);
+          if (feedback) feedback.textContent = 'Opening email draft to kylixeza.dev@gmail.com…';
+          window.location.href = `mailto:kylixeza.dev@gmail.com?subject=${subject}&body=${body}`;
+        });
+      })();
     </script>
   </body>
 </html>
