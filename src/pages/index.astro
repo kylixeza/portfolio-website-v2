@@ -15,26 +15,28 @@ const projects = [
   { name: 'SurveyAsia', type: 'Mobile app', platform: 'Flutter', year: '2023', image: 'surveyasia.webp', href: 'https://play.google.com/store/apps/details?id=com.citiasia.survei_asia', note: 'Flutter survey application built for Android and iOS respondents.' },
 ];
 
+const projectLinks = Object.fromEntries(projects.map((p) => [p.name, p.href]));
+
 const experience = [
-  { role: 'Lead Mobile Developer', company: 'PT Abhimantra Sistem Solusindo', period: 'May 2026 – Present · Jakarta, full-time', detail: 'Led the mobile development team, established best practices, and mentored team members while aligning technical strategy with business goals.' },
-  { role: 'Mobile Developer', company: 'PT Abhimantra Sistem Solusindo', period: 'Oct 2024 – May 2026', detail: 'Built and maintained Android and iOS applications with Flutter and Compose Multiplatform, collaborating across mobile and backend teams.' },
-  { role: 'Android Developer', company: 'Little Brain Boosters', period: 'Aug 2023 – Sep 2024 · Part-time, remote', detail: 'Developed Android apps with Kotlin and Firebase; contributed to app performance, Play Console releases, testing, and subscriptions.' },
-  { role: 'Mobile Developer Intern', company: 'Citiasia Inc.', period: 'Feb 2023 – Jul 2023 · Jakarta', detail: 'Built Flutter applications for Android and iOS and worked with designers and Scrum teams.' },
+  { role: 'Lead Mobile Developer', company: 'PT Abhimantra Sistem Solusindo', period: 'May 2026 – Present · Jakarta, full-time', stack: 'Flutter · KMP · Architecture', work: ['Slamet', 'Semar', 'Nembayu'], detail: 'Led the mobile development team, established best practices, and mentored team members while aligning technical strategy with business goals.' },
+  { role: 'Mobile Developer', company: 'PT Abhimantra Sistem Solusindo', period: 'Oct 2024 – May 2026', stack: 'Flutter · Compose Multiplatform', work: ['Slamet', 'Semar', 'Nembayu'], detail: 'Built and maintained Android and iOS applications with Flutter and Compose Multiplatform, collaborating across mobile and backend teams.' },
+  { role: 'Android Developer', company: 'Little Brain Boosters', period: 'Aug 2023 – Sep 2024 · Part-time, remote', stack: 'Kotlin · Firebase · Play Console', work: ['Dopalearn'], detail: 'Developed Android apps with Kotlin and Firebase; contributed to app performance, Play Console releases, testing, and subscriptions.' },
+  { role: 'Mobile Developer Intern', company: 'Citiasia Inc.', period: 'Feb 2023 – Jul 2023 · Jakarta', stack: 'Flutter · Scrum', work: ['SurveyAsia'], detail: 'Built Flutter applications for Android and iOS and worked with designers and Scrum teams.' },
 ];
 
 const awards = [
-  '1st Winner, INTENTION (App & Web Dev), IFEST, University of Padjadjaran (2021)',
-  '1st Winner, App Innovation HOLOGY 5.0, University of Brawijaya (2022)',
-  '9th Place, Varsity Hackathon, Universiti Sains Malaysia (2022)',
-  '3rd Place, 8th Closer Hackathon, Telkom University (2022)',
-  'Best Graduate, FILKOM UB Yudisium Period XI 2023/2024 (2024)',
-  'Best Graduate, University of Brawijaya Graduation Period XII 2024/2025 (2024)',
+  { year: '2021', title: '1st Winner, INTENTION (App & Web Dev), IFEST', org: 'University of Padjadjaran' },
+  { year: '2022', title: '1st Winner, App Innovation HOLOGY 5.0', org: 'University of Brawijaya' },
+  { year: '2022', title: '9th Place, Varsity Hackathon', org: 'Universiti Sains Malaysia' },
+  { year: '2022', title: '3rd Place, 8th Closer Hackathon', org: 'Telkom University' },
+  { year: '2024', title: 'Best Graduate, FILKOM UB Yudisium Period XI 2023/2024', org: 'University of Brawijaya' },
+  { year: '2024', title: 'Best Graduate, University of Brawijaya Graduation Period XII 2024/2025', org: 'University of Brawijaya' },
 ];
 
 const credentials = [
-  { title: 'Associate Android Developer', issuer: 'Google Developers · 2022', href: 'https://www.credential.net/cc14d1ac-f6fb-46d5-8c17-9850b1d304bc' },
-  { title: 'SoulMath patent', issuer: 'Ministry of Law and Human Rights, Indonesia · 2023', href: 'https://drive.google.com/file/d/1dPQjRZfaZ3zstNcghVf96l50oKQu8crz/view?usp=sharing' },
-  { title: 'Mobile Application for Cuisine Recipe Guide Using Image Classification', issuer: 'J-PTIIK · Journal publication · 2024', href: 'https://j-ptiik.ub.ac.id/index.php/j-ptiik/article/view/13913' },
+  { title: 'Associate Android Developer', issuer: 'Google Developers · 2022', kind: 'Certification', href: 'https://www.credential.net/cc14d1ac-f6fb-46d5-8c17-9850b1d304bc' },
+  { title: 'SoulMath patent', issuer: 'Ministry of Law and Human Rights, Indonesia · 2023', kind: 'Intellectual Property', href: 'https://drive.google.com/file/d/1dPQjRZfaZ3zstNcghVf96l50oKQu8crz/view?usp=sharing' },
+  { title: 'Mobile Application for Cuisine Recipe Guide Using Image Classification', issuer: 'J-PTIIK · 2024', kind: 'Journal Publication', href: 'https://j-ptiik.ub.ac.id/index.php/j-ptiik/article/view/13913' },
 ];
 
 const social = [
@@ -45,11 +47,55 @@ const social = [
 
 const platforms = ['All', 'Android', 'Flutter', 'Compose Multiplatform', 'Library'];
 
+const techStack = [
+  { name: 'Android', area: 'Native OS', href: 'https://developer.android.com', icon: 'https://www.vectorlogo.zone/logos/android/android-icon.svg' },
+  { name: 'Kotlin', area: 'Primary language', href: 'https://kotlinlang.org', icon: 'https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg' },
+  { name: 'Compose Multiplatform', area: 'Shared UI', href: 'https://www.jetbrains.com/compose-multiplatform/', icon: 'https://raw.githubusercontent.com/gilbarbara/logos/refs/heads/main/logos/compose-multiplatform.svg' },
+  { name: 'Flutter', area: 'Cross-platform', href: 'https://flutter.dev', icon: 'https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg' },
+  { name: 'Firebase', area: 'Cloud & Auth', href: 'https://firebase.google.com/', icon: 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg' },
+  { name: 'Ktor', area: 'Kotlin backend', href: 'https://ktor.io', icon: 'https://raw.githubusercontent.com/gilbarbara/logos/refs/heads/main/logos/ktor-icon.svg' },
+  { name: 'PostgreSQL', area: 'Relational DB', href: 'https://www.postgresql.org', icon: 'https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg' },
+  { name: 'TensorFlow', area: 'On-device ML', href: 'https://www.tensorflow.org', icon: 'https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg' },
+];
+
+const news = [
+  {
+    title: 'Terinspirasi Ibu Jualan Soto, Alumnus Top UB Buat Aplikasi Kuliner',
+    summary: 'Perjuangan ibu berjualan soto rupanya memberikan inspirasi berkarya bagi Kylix Eza Saputra.',
+    date: 'Dec 23, 2024',
+    source: 'detikEdu',
+    image: 'news_4.webp',
+    href: 'https://www.detik.com/edu/edutainment/d-7700021/terinspirasi-ibu-jualan-soto-alumnus-top-ub-ini-buat-aplikasi-kuliner-nusantara',
+  },
+  {
+    title: 'FILKOM Buat Aplikasi Pembelajaran ABK Tunagrahita',
+    summary: 'Aplikasi pembelajaran SoulMath yang dikembangkan khusus untuk membantu siswa ABK Tunagrahita.',
+    date: 'Nov 06, 2023',
+    source: 'Prasetya UB',
+    image: 'news_3.webp',
+    href: 'https://prasetya.ub.ac.id/filkom-ub-hasilkan-aplikasi-untuk-pembelajaran-anak-berkebutuhan-khusus-abk-tunagrahita-di-smkn-2-malang/',
+  },
+  {
+    title: 'Kenalkan Google Solution Challenge Pada Mahasiswa',
+    summary: 'GDSC mengundang Kylix Eza Saputra selaku Curriculum Lead GDSC UB.',
+    date: 'Jan 30, 2023',
+    source: 'Prasetya UB',
+    image: 'news_2.webp',
+    href: 'https://prasetya.ub.ac.id/kenalkan-google-solution-challenge-pada-mahasiswa-filkom-gdsc-ub-selenggarakan-info-session/',
+  },
+  {
+    title: 'GDSC UB 2021: The Threshold of a New Age',
+    summary: 'TechSeries Workshop talking about KOTLIN 101 with Android Learning Development, Kylix Eza Saputra.',
+    date: 'Nov 17, 2021',
+    source: 'GDSC UB',
+    image: 'news_1.webp',
+    href: 'https://medium.com/developer-student-club-universitas-brawijaya/gdsc-ub-2021-the-threshold-of-a-new-age-154496f6916e',
+  },
+];
+
 const stageImages = [
   { id: 'hero', src: `${imageBase}about.png`, alt: 'Kylix Eza Saputra portrait', caption: 'Kylix Eza Saputra · Lead Mobile Developer' },
   { id: 'work', src: `${imageBase}soulmath.webp`, alt: 'SoulMath mobile learning application artwork', caption: 'Selected shipped work · SoulMath' },
-  { id: 'experience', src: `${imageBase}dopalearn.webp`, alt: 'Dopalearn cross-platform mobile application artwork', caption: 'Cross-platform shipping · Dopalearn' },
-  { id: 'about', src: `${imageBase}beu.webp`, alt: 'Beu recipe classification application artwork', caption: 'Research to product · Beu' },
 ];
 ---
 <!doctype html>
@@ -83,6 +129,8 @@ const stageImages = [
         <a class="link" href="#work">Work</a>
         <a class="link" href="#experience">Experience</a>
         <a class="link" href="#about">About</a>
+        <a class="link" href="#stack">Stack</a>
+        <a class="link" href="#news">News</a>
         <a class="link" href="#contact">Contact</a>
       </nav>
       <a class="button header-cv" href="/docs/cv.pdf" download="Kylix-Eza-Saputra-CV.pdf">Download CV</a>
@@ -91,7 +139,8 @@ const stageImages = [
     <main id="main">
       <div class="split-shell wrap" id="top">
         <aside class="stage-column" aria-label="Visual preview stage">
-          <div class="stage-frame" data-open>
+          <div class="stage-frame" data-open data-stage-chapter="hero">
+            <span class="stage-glow" aria-hidden="true"></span>
             {stageImages.map((item, index) => (
               <img
                 src={item.src}
@@ -105,13 +154,57 @@ const stageImages = [
                 decoding="async"
               />
             ))}
+            <div class="stage-card stage-card--experience" data-stage-id="experience">
+              <div class="stage-card-top">
+                <span class="stage-eyebrow small muted">Career snapshot</span>
+                <p class="stage-card-title" id="exp-stage-role">{experience[0].role}</p>
+                <p class="small muted" id="exp-stage-company">{experience[0].company}</p>
+                <p class="small stage-card-period nums" id="exp-stage-period">{experience[0].period}</p>
+              </div>
+              <div class="stage-metrics">
+                <div class="stage-metric">
+                  <span class="stage-metric-val nums">3+ yrs</span>
+                  <span class="small muted">Mobile shipping</span>
+                </div>
+                <div class="stage-metric">
+                  <span class="stage-metric-val nums">8+</span>
+                  <span class="small muted">Store releases</span>
+                </div>
+                <div class="stage-metric">
+                  <span class="stage-metric-val nums">3</span>
+                  <span class="small muted">Platforms</span>
+                </div>
+              </div>
+              <div class="stage-card-foot">
+                <span class="small muted">Focus</span>
+                <p class="stage-card-stack" id="exp-stage-stack">{experience[0].stack}</p>
+                <span class="small muted stage-card-sublabel">Related work</span>
+                <p class="stage-card-work" id="exp-stage-work">
+                  {experience[0].work.map((name, i) => (
+                    <>
+                      {i > 0 && <span class="muted"> · </span>}
+                      <a class="link" href={projectLinks[name]} target="_blank" rel="noreferrer">{name}</a>
+                    </>
+                  ))}
+                </p>
+              </div>
+            </div>
             <img
               src={`${imageBase}soulmath.webp`}
               alt=""
               width="1200"
               height="750"
               class="stage-img stage-hover-img is-banner"
-              id="stage-hover-img"
+              id="stage-hover-img-a"
+              aria-hidden="true"
+            />
+            <img
+              src={`${imageBase}soulmath.webp`}
+              alt=""
+              width="1200"
+              height="750"
+              class="stage-img stage-hover-img is-banner"
+              id="stage-hover-img-b"
               aria-hidden="true"
             />
           </div>
@@ -139,6 +232,7 @@ const stageImages = [
             </div>
 
             <div class="filter-bar" role="group" aria-label="Filter projects by platform" data-reveal>
+              <span class="filter-indicator" aria-hidden="true"></span>
               {platforms.map((platform) => (
                 <button
                   type="button"
@@ -224,7 +318,15 @@ const stageImages = [
 
             <div class="timeline-list">
               {experience.map((job, idx) => (
-                <article class:list={['timeline-item', { 'is-current': idx === 0 }]} data-reveal>
+                <article
+                  class:list={['timeline-item', { 'is-current': idx === 0 }]}
+                  data-reveal
+                  data-exp-role={job.role}
+                  data-exp-company={job.company}
+                  data-exp-period={job.period}
+                  data-exp-stack={job.stack}
+                  data-exp-work={JSON.stringify(job.work.map((name) => ({ name, href: projectLinks[name] })))}
+                >
                   <p class="small muted nums timeline-period">{job.period}</p>
                   <div class="timeline-body">
                     <h3 class="timeline-role">{job.role}</h3>
@@ -235,78 +337,232 @@ const stageImages = [
               ))}
             </div>
           </section>
-
-          <section class="section-block about-block" id="about" aria-labelledby="about-title" data-chapter="about">
-            <div class="letter-card" data-reveal>
-              <div class="letter-author">
-                <img
-                  src={`${imageBase}about.png`}
-                  alt="Kylix Eza Saputra"
-                  width="88"
-                  height="88"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div>
-                  <h2 class="head" id="about-title">About</h2>
-                  <p class="small muted">University of Brawijaya · Informatics Engineering (GPA 3.96 / 4.00)</p>
-                </div>
-              </div>
-
-              <div class="letter-copy">
-                <p>
-                  I am a mobile developer who enjoys bringing an idea from a rough sketch to something people can hold and use every day.
-                </p>
-                <p>
-                  My work spans native Android with Kotlin, Compose Multiplatform, and Flutter, alongside Firebase and mobile architecture for production teams.
-                </p>
-                <p>
-                  I graduated in 2024 from the University of Brawijaya with a Bachelor of Informatics Engineering (3.96 / 4.00 GPA), and I continue to mentor teams and contribute to developer communities.
-                </p>
-              </div>
-
-              <div class="stack-row" aria-label="Core technologies">
-                <span>Android</span>
-                <span>Kotlin</span>
-                <span>Compose Multiplatform</span>
-                <span>Flutter</span>
-                <span>Firebase</span>
-                <span>Mobile architecture</span>
-              </div>
-
-              <div class="letter-signoff">
-                <p class="signoff-name">Kylix Eza Saputra</p>
-                <p class="small muted">Lead Mobile Developer</p>
-              </div>
-            </div>
-          </section>
         </div>
       </div>
 
+      <section class="full-band about-band wrap" id="about" aria-labelledby="about-title" data-droplet>
+        <div class="droplet-stage" aria-hidden="true">
+          <span class="droplet-drop"></span>
+          <span class="droplet-ripple droplet-ripple--1"></span>
+          <span class="droplet-ripple droplet-ripple--2"></span>
+        </div>
+
+        <div class="namecard-scene">
+          <div
+            class="namecard-flipper"
+            id="about-namecard"
+            role="button"
+            tabindex="0"
+            aria-pressed="false"
+            aria-label="Flip virtual name card"
+          >
+            <div class="letter-card namecard-face namecard-face--front" data-flip-surface>
+              <div class="letter-aside">
+                <div class="letter-author">
+                  <img
+                    src={`${imageBase}about.png`}
+                    alt="Kylix Eza Saputra"
+                    width="88"
+                    height="88"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div>
+                    <h2 class="head" id="about-title">About</h2>
+                    <p class="small muted">Virtual name card · Click to flip</p>
+                  </div>
+                </div>
+
+                <div class="letter-signoff">
+                  <p class="signoff-name">Kylix Eza Saputra</p>
+                  <p class="small muted">Lead Mobile Developer · Jakarta, Indonesia</p>
+                </div>
+              </div>
+
+              <div class="letter-main">
+                <div class="letter-copy">
+                  <p>
+                    Kylix is an enthusiastic, disciplined, and hardworking individual. He possesses good communication, teamwork, and leadership skills.
+                  </p>
+                  <p>
+                    He has a passion for mobile application development, especially in the Kotlin ecosystem such as Native Android and Compose Multiplatform.
+                  </p>
+                  <p>
+                    He also has extensive experience as an Android Engineer in various projects, where he has been responsible for building solid and reliable Android applications with high-quality software. His clients come from both Indonesia and abroad.
+                  </p>
+                </div>
+
+                <div class="stack-row" aria-label="Core technologies">
+                  <span>Android</span>
+                  <span>Kotlin</span>
+                  <span>Compose Multiplatform</span>
+                  <span>Flutter</span>
+                  <span>Firebase</span>
+                  <span>Mobile architecture</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="letter-card namecard-face namecard-face--back" data-flip-surface aria-hidden="true">
+              <div class="letter-aside">
+                <div class="namecard-back-id">
+                  <span class="stage-eyebrow small muted">Virtual Name Card</span>
+                  <p class="namecard-back-name">Kylix Eza Saputra</p>
+                  <p class="muted">Lead Mobile Developer</p>
+                </div>
+
+                <div class="namecard-back-edu">
+                  <span class="stage-eyebrow small muted">Education</span>
+                  <p>Bachelor of Informatics Engineering</p>
+                  <p class="small muted">University of Brawijaya · 2024 · GPA 3.96 / 4.00</p>
+                </div>
+              </div>
+
+              <div class="letter-main">
+                <div class="namecard-back-grid">
+                  <div class="namecard-back-item">
+                    <span class="stage-eyebrow small muted">Email</span>
+                    <a class="link" href="mailto:kylixeza.dev@gmail.com">kylixeza.dev@gmail.com</a>
+                  </div>
+                  <div class="namecard-back-item">
+                    <span class="stage-eyebrow small muted">Location</span>
+                    <span>Jakarta, Indonesia</span>
+                  </div>
+                  <div class="namecard-back-item">
+                    <span class="stage-eyebrow small muted">Links</span>
+                    <div class="namecard-back-links">
+                      {social.filter((s) => s.href.startsWith('https://')).map((item) => (
+                        <a class="link" href={item.href} target="_blank" rel="noreferrer">{item.label}</a>
+                      ))}
+                      <a class="link" href="/docs/cv.pdf" download="Kylix-Eza-Saputra-CV.pdf">Download CV</a>
+                    </div>
+                  </div>
+                </div>
+
+                <span class="small muted">kylixeza.my.id</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="full-band stack-band wrap" id="stack" aria-labelledby="stack-title">
+        <div class="band-stack-header" data-reveal>
+          <h2 class="head" id="stack-title">Tech stack</h2>
+          <p class="muted">Technologies I work with daily.</p>
+        </div>
+
+        <ul class="stack-grid" data-reveal>
+          {techStack.map((tech) => (
+            <li>
+              <a class="stack-tile" href={tech.href} target="_blank" rel="noreferrer">
+                <div class="stack-tile-icon">
+                  <img src={tech.icon} alt="" width="28" height="28" loading="lazy" decoding="async" />
+                </div>
+                <div class="stack-tile-meta">
+                  <span class="stack-tile-name">{tech.name}</span>
+                  <span class="small muted">{tech.area}</span>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section class="full-band proof-band wrap" id="recognition" aria-labelledby="proof-title">
-        <div class="proof-layout">
-          <div class="proof-heading" data-reveal>
-            <h2 class="head" id="proof-title">Recognition</h2>
+        <div class="band-stack-header" data-reveal>
+          <h2 class="head" id="proof-title">Recognition</h2>
+          <p class="muted">Selected awards, patents, certifications, and research.</p>
+        </div>
+
+        <div class="proof-bento" data-reveal>
+          <div class="proof-panel">
+            <p class="proof-kind muted">Competitions and honours</p>
+            <ul class="award-ledger">
+              {awards.map((award) => (
+                <li class="award-row">
+                  <span class="award-year small nums">{award.year}</span>
+                  <div class="award-info">
+                    <span class="award-title">{award.title}</span>
+                    <span class="small muted">{award.org}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div class="proof-columns" data-reveal>
-            <div class="proof-col">
-              <p class="proof-kind muted">Competitions and honours</p>
-              <ul>
-                {awards.map((award) => <li>{award}</li>)}
-              </ul>
+          <div class="proof-panel">
+            <p class="proof-kind muted">Credentials and publication</p>
+            <div class="credential-cards">
+              {credentials.map((item) => (
+                <a class="credential-card" href={item.href} target="_blank" rel="noreferrer">
+                  <div class="credential-top">
+                    <span class="credential-kind small muted">{item.kind}</span>
+                    <span class="credential-arrow" aria-hidden="true">↗</span>
+                  </div>
+                  <p class="credential-title">{item.title}</p>
+                  <span class="small muted">{item.issuer}</span>
+                </a>
+              ))}
             </div>
-            <div class="proof-col">
-              <p class="proof-kind muted">Credentials and publication</p>
-              <ul>
-                {credentials.map((item) => (
-                  <li>
-                    <a class="link" href={item.href} target="_blank" rel="noreferrer">{item.title}</a>
-                    <span class="small muted proof-meta">{item.issuer}</span>
-                  </li>
-                ))}
-              </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="full-band news-band wrap" id="news" aria-labelledby="news-title">
+        <div class="band-stack-header" data-reveal>
+          <h2 class="head" id="news-title">In the news</h2>
+          <p class="muted">Workshops, research, and press coverage.</p>
+        </div>
+
+        <div class="news-editorial" data-reveal>
+          <a class="news-featured" href={news[0].href} target="_blank" rel="noreferrer">
+            <div class="news-featured-media">
+              <img
+                src={`${imageBase}${news[0].image}`}
+                alt={news[0].title}
+                width="960"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
+            <div class="news-featured-body">
+              <div class="news-meta small muted">
+                <span>{news[0].source}</span>
+                <span aria-hidden="true">·</span>
+                <span class="nums">{news[0].date}</span>
+              </div>
+              <h3 class="news-featured-title">{news[0].title}</h3>
+              <p class="muted">{news[0].summary}</p>
+              <span class="news-read small">Read article ↗</span>
+            </div>
+          </a>
+
+          <div class="news-feed">
+            {news.slice(1).map((item) => (
+              <a class="news-compact" href={item.href} target="_blank" rel="noreferrer">
+                <div class="news-compact-media">
+                  <img
+                    src={`${imageBase}${item.image}`}
+                    alt={item.title}
+                    width="320"
+                    height="220"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="news-compact-body">
+                  <div class="news-meta small muted">
+                    <span>{item.source}</span>
+                    <span aria-hidden="true">·</span>
+                    <span class="nums">{item.date}</span>
+                  </div>
+                  <h3 class="news-title">{item.title}</h3>
+                  <p class="small muted news-compact-summary">{item.summary}</p>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -344,16 +600,6 @@ const stageImages = [
     </main>
 
     <footer class="site-footer wrap">
-      <img
-        class="footer-bg"
-        src="https://picsum.photos/id/172/1600/1000?grayscale"
-        alt="Calm misty stone jetty stretching into still water"
-        width="1600"
-        height="1000"
-        loading="lazy"
-        decoding="async"
-      />
-      <div class="footer-overlay" aria-hidden="true"></div>
 
       <div class="footer-top">
         <nav class="footer-links" aria-label="Social links">
@@ -378,7 +624,6 @@ const stageImages = [
         <p class="footer-wordmark" aria-hidden="true">Kylix Eza Saputra</p>
         <div class="footer-legal small">
           <span>© {new Date().getFullYear()} Kylix Eza Saputra</span>
-          <span>Atmospheric backdrop: Aleksi Tappura via Picsum (Unsplash licence)</span>
         </div>
       </div>
     </footer>
@@ -410,19 +655,88 @@ const stageImages = [
           revealEls.forEach((el) => el.classList.add('is-in'));
         }
 
-        // 2. Slow crossfade on sticky stage as chapters scroll into view
+        // 1b. Water droplet scroll-into-view animation for About section
+        const dropletEls = document.querySelectorAll('[data-droplet]');
+        if ('IntersectionObserver' in window && !reduced) {
+          const dropletObserver = new IntersectionObserver(
+            (entries) => {
+              for (const entry of entries) {
+                if (!entry.isIntersecting) continue;
+                entry.target.classList.add('is-droplet-in');
+                dropletObserver.unobserve(entry.target);
+              }
+            },
+            { rootMargin: '0px 0px -12% 0px', threshold: 0.18 }
+          );
+          dropletEls.forEach((el) => dropletObserver.observe(el));
+        } else {
+          dropletEls.forEach((el) => el.classList.add('is-droplet-in'));
+        }
+
+        // 1c. Virtual name card horizontal 3D flip
+        const namecard = document.getElementById('about-namecard');
+        if (namecard) {
+          const frontFace = namecard.querySelector('.namecard-face--front');
+          const backFace = namecard.querySelector('.namecard-face--back');
+          const toggleFlip = () => {
+            const flipped = namecard.classList.toggle('is-flipped');
+            namecard.setAttribute('aria-pressed', flipped ? 'true' : 'false');
+            frontFace?.setAttribute('aria-hidden', flipped ? 'true' : 'false');
+            backFace?.setAttribute('aria-hidden', flipped ? 'false' : 'true');
+          };
+          namecard.addEventListener('click', (e) => {
+            const target = e.target instanceof Element ? e.target : null;
+            if (!target || target.closest('a')) return;
+            if (target.closest('[data-flip-surface]')) toggleFlip();
+          });
+          namecard.addEventListener('keydown', (e) => {
+            if (e.target !== namecard) return;
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggleFlip();
+            }
+          });
+        }
+
+        // 2. Smooth morphing & crossfade on sticky stage as chapters scroll into view
+        const stageColumn = document.querySelector('.stage-column');
         const stageFrame = document.querySelector('.stage-frame');
-        const stageImgs = [...document.querySelectorAll('.stage-img[data-stage-id]')];
-        const hoverImg = document.getElementById('stage-hover-img');
+        const stageEls = [...document.querySelectorAll('[data-stage-id]')];
+        const hoverLayers = [
+          document.getElementById('stage-hover-img-a'),
+          document.getElementById('stage-hover-img-b'),
+        ].filter(Boolean);
+        let activeHoverIdx = -1;
+        let previewToken = 0;
         let activeChapter = 'hero';
+
+        const syncStageHeight = () => {
+          if (!stageFrame || !stageColumn) return;
+          const isHovering = activeHoverIdx !== -1;
+          const landscape = isHovering || activeChapter === 'work';
+          stageFrame.classList.toggle('is-landscape', landscape);
+          if (window.innerWidth <= 960) {
+            const baseH = window.innerHeight * 0.46;
+            const targetH = landscape ? Math.min(baseH, stageFrame.clientWidth * 0.625) : baseH;
+            stageFrame.style.height = `${Math.round(targetH)}px`;
+            return;
+          }
+          const colH = stageColumn.clientHeight;
+          const colW = stageColumn.clientWidth;
+          if (!colH || !colW) return;
+          const targetH = landscape ? Math.min(colH, colW * 0.625) : colH;
+          stageFrame.style.height = `${Math.round(targetH)}px`;
+        };
 
         const setStage = (id) => {
           activeChapter = id;
-          stageImgs.forEach((img) => img.classList.toggle('is-active', img.dataset.stageId === id));
-          if (stageFrame && (!hoverImg || !hoverImg.classList.contains('is-visible'))) {
-            stageFrame.classList.toggle('is-landscape', id !== 'hero');
-          }
+          stageFrame?.setAttribute('data-stage-chapter', id);
+          stageEls.forEach((el) => el.classList.toggle('is-active', el.dataset.stageId === id));
+          syncStageHeight();
         };
+
+        syncStageHeight();
+        window.addEventListener('resize', syncStageHeight, { passive: true });
 
         if ('IntersectionObserver' in window) {
           const chapterObserver = new IntersectionObserver(
@@ -439,10 +753,42 @@ const stageImages = [
           document.querySelectorAll('[data-chapter]').forEach((sec) => chapterObserver.observe(sec));
         }
 
-        // 3. Work ledger platform filter + live stage preview
+        // 3. Work ledger platform filter + double-buffered stage preview + liquid glass lens
+        const filterBar = document.querySelector('.filter-bar');
+        const filterIndicator = filterBar?.querySelector('.filter-indicator');
         const filterBtns = [...document.querySelectorAll('.filter-btn')];
         const ledgerItems = [...document.querySelectorAll('.ledger-item')];
         const emptyState = document.getElementById('ledger-empty');
+
+        const moveIndicator = (btn, animate = true) => {
+          if (!filterBar || !filterIndicator || !btn) return;
+          if (!animate) filterIndicator.style.transition = 'none';
+          filterIndicator.style.width = `${btn.offsetWidth}px`;
+          filterIndicator.style.height = `${btn.offsetHeight}px`;
+          filterIndicator.style.transform = `translate3d(${btn.offsetLeft}px, ${btn.offsetTop}px, 0)`;
+          filterIndicator.classList.add('is-ready');
+          if (!animate) {
+            filterIndicator.getBoundingClientRect();
+            filterIndicator.style.transition = '';
+          } else if (!reduced) {
+            filterIndicator.classList.remove('is-gliding');
+            filterIndicator.getBoundingClientRect();
+            filterIndicator.classList.add('is-gliding');
+          }
+        };
+
+        const initialActive = filterBtns.find((b) => b.classList.contains('is-active')) || filterBtns[0];
+        if (initialActive) {
+          requestAnimationFrame(() => moveIndicator(initialActive, false));
+          document.fonts?.ready.then(() => {
+            const current = filterBtns.find((b) => b.classList.contains('is-active'));
+            if (current) moveIndicator(current, false);
+          });
+          window.addEventListener('resize', () => {
+            const current = filterBtns.find((b) => b.classList.contains('is-active'));
+            if (current) moveIndicator(current, false);
+          });
+        }
 
         filterBtns.forEach((btn) => {
           btn.addEventListener('click', () => {
@@ -452,6 +798,7 @@ const stageImages = [
               b.classList.toggle('is-active', active);
               b.setAttribute('aria-pressed', active ? 'true' : 'false');
             });
+            moveIndicator(btn, true);
             let visibleCount = 0;
             ledgerItems.forEach((item) => {
               const match = filter === 'All' || item.dataset.platform === filter;
@@ -462,21 +809,58 @@ const stageImages = [
           });
         });
 
+        const preloadPreviews = () => {
+          ledgerItems.forEach((item) => {
+            const src = item.dataset.preview;
+            if (!src) return;
+            const img = new Image();
+            img.src = src;
+          });
+        };
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(preloadPreviews, { timeout: 2500 });
+        } else {
+          window.addEventListener('load', preloadPreviews, { once: true });
+        }
+
         const showPreview = (item) => {
-          if (!hoverImg) return;
+          if (hoverLayers.length < 2) return;
           const src = item.dataset.preview;
           const cap = item.dataset.caption;
           if (!src) return;
-          hoverImg.src = src;
-          hoverImg.alt = cap || 'Project preview';
-          hoverImg.classList.add('is-visible');
-          stageFrame?.classList.add('is-landscape');
+          const token = ++previewToken;
+          const nextIdx = activeHoverIdx === 0 ? 1 : 0;
+          const nextEl = hoverLayers[nextIdx];
+          const prevEl = activeHoverIdx !== -1 ? hoverLayers[activeHoverIdx] : null;
+
+          const activate = () => {
+            if (token !== previewToken) return;
+            nextEl.alt = cap || 'Project preview';
+            nextEl.style.zIndex = '3';
+            if (prevEl) prevEl.style.zIndex = '2';
+            nextEl.classList.add('is-visible');
+            if (prevEl && prevEl !== nextEl) prevEl.classList.remove('is-visible');
+            activeHoverIdx = nextIdx;
+            syncStageHeight();
+          };
+
+          if (nextEl.getAttribute('src') === src && nextEl.complete) {
+            activate();
+            return;
+          }
+          nextEl.src = src;
+          if (typeof nextEl.decode === 'function') {
+            nextEl.decode().then(activate, activate);
+          } else {
+            activate();
+          }
         };
 
         const hidePreview = () => {
-          if (!hoverImg) return;
-          hoverImg.classList.remove('is-visible');
-          stageFrame?.classList.toggle('is-landscape', activeChapter !== 'hero');
+          previewToken += 1;
+          activeHoverIdx = -1;
+          hoverLayers.forEach((el) => el.classList.remove('is-visible'));
+          syncStageHeight();
         };
 
         ledgerItems.forEach((item) => {
@@ -486,6 +870,67 @@ const stageImages = [
           item.addEventListener('focusout', (e) => {
             if (!item.contains(e.relatedTarget)) hidePreview();
           });
+        });
+
+        // 3b. Experience timeline hover updates stage card with smooth crossfade
+        const expCard = document.querySelector('.stage-card--experience');
+        const expRoleEl = document.getElementById('exp-stage-role');
+        const expCompanyEl = document.getElementById('exp-stage-company');
+        const expPeriodEl = document.getElementById('exp-stage-period');
+        const expStackEl = document.getElementById('exp-stage-stack');
+        const expWorkEl = document.getElementById('exp-stage-work');
+        let expSwapTimer = 0;
+
+        document.querySelectorAll('.timeline-item[data-exp-role]').forEach((item) => {
+          const updateExpStage = () => {
+            const nextRole = item.dataset.expRole || '';
+            const nextCompany = item.dataset.expCompany || '';
+            const nextPeriod = item.dataset.expPeriod || '';
+            const nextStack = item.dataset.expStack || '';
+            const nextWork = JSON.parse(item.dataset.expWork || '[]');
+            if (
+              expRoleEl?.textContent === nextRole &&
+              expPeriodEl?.textContent === nextPeriod
+            ) return;
+
+            const applyText = () => {
+              if (expRoleEl) expRoleEl.textContent = nextRole;
+              if (expCompanyEl) expCompanyEl.textContent = nextCompany;
+              if (expPeriodEl) expPeriodEl.textContent = nextPeriod;
+              if (expStackEl) expStackEl.textContent = nextStack;
+              if (expWorkEl) {
+                expWorkEl.replaceChildren();
+                nextWork.forEach((w, i) => {
+                  if (i > 0) {
+                    const sep = document.createElement('span');
+                    sep.className = 'muted';
+                    sep.textContent = ' · ';
+                    expWorkEl.appendChild(sep);
+                  }
+                  const a = document.createElement('a');
+                  a.className = 'link';
+                  a.href = w.href;
+                  a.target = '_blank';
+                  a.rel = 'noreferrer';
+                  a.textContent = w.name;
+                  expWorkEl.appendChild(a);
+                });
+              }
+            };
+
+            if (!expCard || reduced) {
+              applyText();
+              return;
+            }
+            window.clearTimeout(expSwapTimer);
+            expCard.classList.add('is-updating');
+            expSwapTimer = window.setTimeout(() => {
+              applyText();
+              expCard.classList.remove('is-updating');
+            }, 130);
+          };
+          item.addEventListener('pointerenter', updateExpStage);
+          item.addEventListener('focusin', updateExpStage);
         });
 
         // 4. Single-field contact form handoff
