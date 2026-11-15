@@ -231,7 +231,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; text-wrap: bala
 }
 .stage-frame.is-landscape {
   height: auto;
-  aspect-ratio: 16 / 10;
   max-height: calc(100svh - 6.75rem);
 }
 .stage-glow {
@@ -268,6 +267,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; text-wrap: bala
 .stage-img.is-banner {
   object-fit: contain;
 }
+.stage-frame.is-landscape .stage-img.is-banner {
+  bottom: auto;
+  height: calc(100% - var(--work-panel-h, 0px));
+}
 .stage-img.is-active {
   opacity: 1;
   transform: scale(1) translate3d(0, 0, 0);
@@ -284,6 +287,60 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; text-wrap: bala
 .stage-hover-img.is-visible {
   opacity: 1;
   transform: scale(1) translate3d(0, 0, 0);
+}
+.stage-work-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.95rem 1.25rem 1.1rem;
+  background: var(--glass-bg);
+  border-top: 1px solid rgba(43, 38, 34, 0.08);
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+  pointer-events: none;
+  transition:
+    opacity 420ms var(--ease-expo),
+    transform 520ms var(--ease-expo);
+}
+.stage-frame.is-landscape .stage-work-panel {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  pointer-events: auto;
+}
+.stage-work-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.stage-work-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 0.95rem + 0.5vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.stage-work-desc {
+  font-size: var(--step-small);
+  line-height: 1.45;
+}
+.stage-work-client {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(43, 38, 34, 0.08);
+}
+.stage-work-client-val {
+  font-weight: 500;
+  text-align: right;
 }
 .stage-card {
   position: absolute;
@@ -1153,8 +1210,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; text-wrap: bala
   }
   .stage-frame.is-landscape {
     height: auto;
-    aspect-ratio: 16 / 10;
-    max-height: 46svh;
+    max-height: 65svh;
   }
   .reading-column {
     padding-top: 0;

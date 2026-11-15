@@ -4,16 +4,18 @@ import '../styles/portfolio.css';
 const imageBase = '/images/';
 
 const projects = [
-  { name: 'Slamet', type: 'Mobile app', platform: 'Flutter', year: '2025', image: 'slamet.webp', href: 'https://play.google.com/store/apps/details?id=id.pammineral.slamet&pcampaignid=web_share', appStore: 'https://apps.apple.com/id/app/slamet/id6670607085', note: 'Enterprise mobile client delivered for Android and iOS.' },
-  { name: 'Semar', type: 'Mobile app', platform: 'Flutter', year: '2025', image: 'semar.webp', href: 'https://play.google.com/store/apps/details?id=com.indokordsa.app&pcampaignid=web_share', appStore: 'https://apps.apple.com/id/app/semar/id6446005830', note: 'Industrial operations app available across Google Play and App Store.' },
-  { name: 'Nembayu', type: 'Mobile app', platform: 'Flutter', year: '2025', image: 'nembayu.webp', href: 'https://apps.apple.com/id/app/nembayu/id6444177178', note: 'Consumer mobile application published on the App Store.' },
-  { name: 'Beu', type: 'Recipe platform', platform: 'Compose Multiplatform', year: '2024', image: 'beu.webp', href: 'https://cookwithbeu.web.id', note: 'Cuisine recipe guide powered by image classification research.' },
-  { name: 'Dopalearn', type: 'Learning app', platform: 'Android', year: '2024', image: 'dopalearn.webp', href: 'https://play.google.com/store/apps/details?id=com.littlebrainboosters.dopalearn', appStore: 'https://apps.apple.com/id/app/dopalearn/id1542507323', note: 'Cross-platform learning companion shipped to Google Play and App Store.' },
-  { name: 'Firetor', type: 'Open-source library', platform: 'Library', year: '2024', image: 'firetor.webp', href: 'https://github.com/kylixeza/firetor', note: 'Open-source Kotlin library for Firebase Firestore workflows.' },
-  { name: 'SoulMath', type: 'Learning app', platform: 'Android', year: '2023', image: 'soulmath.webp', href: 'https://play.google.com/store/apps/details?id=com.ramiyon.soulmath_v3&hl=id', note: 'Interactive math learning application with patented mobile workflow.' },
-  { name: 'PondPedia', type: 'Mobile app', platform: 'Android', year: '2023', image: 'pondpedia.webp', href: 'https://play.google.com/store/apps/details?id=com.pondpedia.android.pondpedia', note: 'Native Android client built for aquaculture operations.' },
-  { name: 'SurveyAsia', type: 'Mobile app', platform: 'Flutter', year: '2023', image: 'surveyasia.webp', href: 'https://play.google.com/store/apps/details?id=com.citiasia.survei_asia', note: 'Flutter survey application built for Android and iOS respondents.' },
+  { name: 'Slamet', type: 'Mobile app', platform: 'Flutter', year: '2025', client: 'PT PAM Mineral Tbk', image: 'slamet.webp', href: 'https://play.google.com/store/apps/details?id=id.pammineral.slamet&pcampaignid=web_share', appStore: 'https://apps.apple.com/id/app/slamet/id6670607085', note: 'Enterprise safety and accident tracking app across five modules: Hazard Report, Inspection, Accident Management, Behavior-Based Safety, and PICA.' },
+  { name: 'Semar', type: 'Mobile app', platform: 'Flutter', year: '2025', client: 'PT Indo Kordsa Tbk', image: 'semar.webp', href: 'https://play.google.com/store/apps/details?id=com.indokordsa.app&pcampaignid=web_share', appStore: 'https://apps.apple.com/id/app/semar/id6446005830', note: 'Enterprise SHE management app across six modules: Safe Your Friend, Equipment Inspection, SHE Inspection, Work Permit, Data Analytics, and SHE Campaign.' },
+  { name: 'Nembayu', type: 'Mobile app', platform: 'Flutter', year: '2025', client: 'PT Kideco Jaya Agung', image: 'nembayu.webp', href: 'https://apps.apple.com/id/app/nembayu/id6444177178', note: 'Public safety reporting app across five modules: Hazard Report, Inspection, Incident, Behavior-Based Safety, and PICA.' },
+  { name: 'Beu', type: 'Recipe platform', platform: 'Compose Multiplatform', year: '2024', client: 'Independent · J-PTIIK Research', image: 'beu.webp', href: 'https://cookwithbeu.web.id', note: 'Indonesian cuisine recipe guide powered by on-device image classification research (J-PTIIK 2024), built with Compose Multiplatform.' },
+  { name: 'Dopalearn', type: 'Learning app', platform: 'Android', year: '2024', client: 'Little Brain Boosters', image: 'dopalearn.webp', href: 'https://play.google.com/store/apps/details?id=com.littlebrainboosters.dopalearn', appStore: 'https://apps.apple.com/id/app/dopalearn/id1542507323', note: 'Kids video-learning app that replaces ads with periodic popup micro-lessons and challenges, letting parents assign math, reading, and vocabulary lessons.' },
+  { name: 'Firetor', type: 'Open-source library', platform: 'Library', year: '2024', client: 'Open Source', image: 'firetor.webp', href: 'https://github.com/kylixeza/firetor', note: 'Open-source Kotlin library simplifying Firebase Firestore queries, real-time listeners, and reactive data workflows for Android and KMP.' },
+  { name: 'SoulMath', type: 'Learning app', platform: 'Android', year: '2023', client: 'UB Learning Technology', image: 'soulmath.webp', href: 'https://play.google.com/store/apps/details?id=com.ramiyon.soulmath_v3&hl=id', note: 'Interactive math learning Android app designed for students with special needs (ABK Tunagrahita), holding a registered Indonesian IP patent.' },
+  { name: 'PondPedia', type: 'Mobile app', platform: 'Android', year: '2023', client: 'PondPedia', image: 'pondpedia.webp', href: 'https://play.google.com/store/apps/details?id=com.pondpedia.android.pondpedia', note: 'Native Android client built for aquaculture operations, helping fish farmers monitor pond conditions and manage daily workflows.' },
+  { name: 'SurveyAsia', type: 'Mobile app', platform: 'Flutter', year: '2023', client: 'PT Citiasia Internasional', image: 'surveyasia.webp', href: 'https://play.google.com/store/apps/details?id=com.citiasia.survei_asia', note: 'Cross-platform survey and respondent data-collection app built with Flutter for Android and iOS during an internship at Citiasia Inc.' },
 ];
+
+const defaultWorkProject = projects.find((p) => p.name === 'SoulMath') ?? projects[0];
 
 const projectLinks = Object.fromEntries(projects.map((p) => [p.name, p.href]));
 
@@ -207,6 +209,18 @@ const stageImages = [
               id="stage-hover-img-b"
               aria-hidden="true"
             />
+            <div class="stage-work-panel" id="stage-work-panel" aria-live="polite">
+              <div class="stage-work-meta">
+                <span class="stage-eyebrow small muted" id="work-stage-meta">{defaultWorkProject.platform} · {defaultWorkProject.year}</span>
+                <span class="small muted" id="work-stage-type">{defaultWorkProject.type}</span>
+              </div>
+              <p class="stage-work-title" id="work-stage-title">{defaultWorkProject.name}</p>
+              <p class="stage-work-desc muted" id="work-stage-desc">{defaultWorkProject.note}</p>
+              <div class="stage-work-client">
+                <span class="stage-eyebrow small muted">Company / Client</span>
+                <span class="small stage-work-client-val" id="work-stage-client">{defaultWorkProject.client}</span>
+              </div>
+            </div>
           </div>
         </aside>
 
@@ -250,6 +264,11 @@ const stageImages = [
                 <li
                   class="ledger-item"
                   data-platform={project.platform}
+                  data-name={project.name}
+                  data-type={project.type}
+                  data-year={project.year}
+                  data-client={project.client}
+                  data-note={project.note}
                   data-preview={`${imageBase}${project.image}`}
                   data-caption={`${project.name} · ${project.type}`}
                   data-reveal
@@ -710,21 +729,35 @@ const stageImages = [
         let previewToken = 0;
         let activeChapter = 'hero';
 
+        const workPanel = document.getElementById('stage-work-panel');
+        const workMetaEl = document.getElementById('work-stage-meta');
+        const workTypeEl = document.getElementById('work-stage-type');
+        const workTitleEl = document.getElementById('work-stage-title');
+        const workDescEl = document.getElementById('work-stage-desc');
+        const workClientEl = document.getElementById('work-stage-client');
+        const defaultWorkMeta = workMetaEl?.textContent || '';
+        const defaultWorkType = workTypeEl?.textContent || '';
+        const defaultWorkTitle = workTitleEl?.textContent || '';
+        const defaultWorkDesc = workDescEl?.textContent || '';
+        const defaultWorkClient = workClientEl?.textContent || '';
+
         const syncStageHeight = () => {
           if (!stageFrame || !stageColumn) return;
           const isHovering = activeHoverIdx !== -1;
           const landscape = isHovering || activeChapter === 'work';
           stageFrame.classList.toggle('is-landscape', landscape);
-          if (window.innerWidth <= 960) {
+          const panelH = landscape && workPanel ? workPanel.offsetHeight : 0;
+          stageFrame.style.setProperty('--work-panel-h', `${panelH}px`);
+          if (window.innerWidth <= 900) {
             const baseH = window.innerHeight * 0.46;
-            const targetH = landscape ? Math.min(baseH, stageFrame.clientWidth * 0.625) : baseH;
+            const targetH = landscape ? Math.min(window.innerHeight * 0.65, stageFrame.clientWidth * 0.625 + panelH) : baseH;
             stageFrame.style.height = `${Math.round(targetH)}px`;
             return;
           }
           const colH = stageColumn.clientHeight;
           const colW = stageColumn.clientWidth;
           if (!colH || !colW) return;
-          const targetH = landscape ? Math.min(colH, colW * 0.625) : colH;
+          const targetH = landscape ? Math.min(colH, colW * 0.625 + panelH) : colH;
           stageFrame.style.height = `${Math.round(targetH)}px`;
         };
 
@@ -823,6 +856,14 @@ const stageImages = [
           window.addEventListener('load', preloadPreviews, { once: true });
         }
 
+        const updateWorkPanel = (meta, type, title, desc, client) => {
+          if (workMetaEl) workMetaEl.textContent = meta;
+          if (workTypeEl) workTypeEl.textContent = type;
+          if (workTitleEl) workTitleEl.textContent = title;
+          if (workDescEl) workDescEl.textContent = desc;
+          if (workClientEl) workClientEl.textContent = client;
+        };
+
         const showPreview = (item) => {
           if (hoverLayers.length < 2) return;
           const src = item.dataset.preview;
@@ -832,6 +873,14 @@ const stageImages = [
           const nextIdx = activeHoverIdx === 0 ? 1 : 0;
           const nextEl = hoverLayers[nextIdx];
           const prevEl = activeHoverIdx !== -1 ? hoverLayers[activeHoverIdx] : null;
+
+          updateWorkPanel(
+            `${item.dataset.platform || ''} · ${item.dataset.year || ''}`,
+            item.dataset.type || '',
+            item.dataset.name || '',
+            item.dataset.note || '',
+            item.dataset.client || ''
+          );
 
           const activate = () => {
             if (token !== previewToken) return;
@@ -860,6 +909,7 @@ const stageImages = [
           previewToken += 1;
           activeHoverIdx = -1;
           hoverLayers.forEach((el) => el.classList.remove('is-visible'));
+          updateWorkPanel(defaultWorkMeta, defaultWorkType, defaultWorkTitle, defaultWorkDesc, defaultWorkClient);
           syncStageHeight();
         };
 
